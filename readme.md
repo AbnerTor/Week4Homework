@@ -27,6 +27,8 @@ This project covered under a MIT License.
 
 It is a quiz that uses javascript.
 
+You can view it here: https://abnertor.github.io/Week4Homework/
+
 
 ## Tests
 
