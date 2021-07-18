@@ -3,7 +3,7 @@ const questions= [
     {
         question: 'What does "HTML" stand for?',
         answers: ['Hypertext Markup Language', 'Hyper Toll Madeup Language', 'Herbert Tim Marl and Luke', 'Hot Takoyaki, Miso and Leek'],
-        correctAnswer: 1
+        correctAnswer: 0
     },
     {
         question: 'What year was Javascript first introduced',
@@ -13,17 +13,17 @@ const questions= [
     {
         question: "You can use Javascript on the front end as well as on the backend",
         answers: ['True', 'False', 'Maybe', "I'm not sure"],
-        correctAnswer: 2
+        correctAnswer: 1
     },
     {
         question: 'What does API stand for',
         answers: ['Associated Philanthropic Insubordinates', 'Applied Physics Internation', 'Application Programming Interface', 'Abundant Pacifist Idealists'],
-        correctAnswer: '3'
+        correctAnswer: 2
     },
     {
         question: "*Bonus Question* Whos is Magnus Carlsen?",
         answers: ['A writer', 'A soccer player', 'A movie director', 'A chess player'],
-        correctAnswer: 4
+        correctAnswer: 3
     }
 ]
 
@@ -212,20 +212,18 @@ function displayScores() {
         }
     }
     var goBackBtn = document.createElement("button");
-    goBackBtn.innerHTML = "Go back";
-    goBackBtn.setAttribute("style", "margin-right: 5px;");
-    button.appendChild(goBackBtn);
+    goBackBtn.innerHTML = "Take quiz again";
+    goBackBtn.setAttribute("style", "margin-right: 5px; background-color: white; padding: 3;");
+    buttonDiv.appendChild(goBackBtn);
 
     var resetScore = document.createElement("button");
-    resetScore.innerHTML = "Clear High Scores";
+    resetScore.innerHTML = "Clear High Scores";d
     button.appendChild(resetScore);
 
     var qNumber = 0;
     var timer = 75;
 
-    goBackBtn.addEventListener("click", function () {
-        location.reload();
-    });
+    goBackBtn.addEventListener("click", startQuiz());
 
     resetScore.addEventListener("click", function () {
         localStorage.removeItem("quizScore");
